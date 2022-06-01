@@ -39,13 +39,13 @@ jobs:
         # push it to ECR so that it can
         # be deployed to ECS.
         cd cats
-        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG/$CAT .
-        docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG/$CAT
-        echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG/$CAT"
+        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
+        docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+        echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
         cd dogs
-        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG/$DOG .
-        docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG/$DOG
-        echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG/$DOG"
+        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
+        docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+        echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
 
 
     
